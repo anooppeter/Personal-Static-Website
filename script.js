@@ -1,0 +1,17 @@
+$(document).ready(function(){
+    $('#contactform').validate({
+        rules:{
+            fname:{
+                required:true,
+                minlength:2
+            },
+            lname:{
+                required:true,
+            },
+            emailAddress:{
+                required:true,
+                type:email
+            }
+        }
+    })
+})

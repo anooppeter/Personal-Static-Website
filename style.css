@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Poppins&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+}
+.navbar{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    background: rgba(0, 0, 0, 0.6) !important;
+    padding: 20px 0;
+
+}
+.navbar-light .navbar-nav .nav-link{
+    color: rgb(255, 255, 255);
+    padding-left: 20px;
+}
+/* .navbar-light .navbar-nav .nav-link.active,
+navbar-light .navbar-nav .nav-link:hover{
+    color: #1ebba3;
+
+} */
+.heading-content{
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    max-width: 100%;
+}
+.heading-content h5{
+    font-size: 3em;
+    font-weight: 300;
+    color: #fff;
+    font-family: monospace;
+}
+.heading-content h1{
+    font-size: 4em;
+    font-weight:bolder;
+    color: #fff;
+    font-family:'Montserrat', sans-serif ;
+}
+.heading-content p{
+    color: #3c873a;
+    font-size: 1em;
+    letter-spacing: 2px;
+
+}
+#about .btn{
+    width: 40%;
+    padding: 15px 22px;
+    background: #000;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#about .btn a{
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#about .btn :hover{
+    border: 1px solid #1ebba3;
+    cursor: pointer;
+}
