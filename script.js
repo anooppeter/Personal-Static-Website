@@ -1,16 +1,16 @@
 $(document).ready(function(){
-    $('#contactform').validate({
+    $('#submit-form').validate({
         rules:{
             fname:{
                 required:true,
-                minlength:2
+                minlength:3
             },
             lname:{
                 required:true,
             },
             emailAddress:{
                 required:true,
-                type:email
+                email:true
             }
         }
     })
