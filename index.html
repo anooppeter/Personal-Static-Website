@@ -186,7 +186,7 @@
       <input type="text" class="form-control" minlength="2" id="form_sname" name="lname" required>
       <span class="error_form" id="sname_error_message"></span>
     </div>
-    <div class="form-group">
+    <div class="form-group">  
       <label for="email">Email address:</label>
       <input type="email" class="form-control" id="form_email" name="emailAddress" required>
       <span class="error_form" id="email_error_message"></span>
@@ -251,6 +251,7 @@
 <!-- <script src="script.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
 $(function(){
 
@@ -301,7 +302,7 @@ $(function(){
          }
 
          function check_email() {
-            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             var email = $("#form_email").val();
             if (pattern.test(email) && email !== '') {
                $("#email_error_message").hide();
@@ -323,7 +324,7 @@ $(function(){
             check_sname();
             check_email();
 
-            if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
+            if (error_fname === false && error_sname === false && error_email === false) {
                alert("Registration Successfull");
                return true;
             } else {
@@ -354,5 +355,6 @@ $(function(){
       })
   })
 </script>
+
 </body>
 </html>
