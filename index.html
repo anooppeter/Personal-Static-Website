@@ -274,7 +274,7 @@ $(function(){
          });
 
          function check_fname() {
-            var pattern = /^[a-z][a-z\s]*$/;
+            var pattern = /^[a-zA-Z\s]*$/;
             var fname = $("#form_fname").val();
             if (pattern.test(fname)) {
                $("#fname_error_message").hide();
@@ -288,7 +288,7 @@ $(function(){
          }
 
          function check_sname() {
-            var pattern = /^[a-z][a-z\s]*$/;
+            var pattern = /^[a-zA-Z\s]*$/;
             var sname = $("#form_sname").val()
             if (pattern.test(sname)) {
                $("#sname_error_message").hide();
