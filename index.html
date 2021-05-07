@@ -301,7 +301,7 @@ $(function(){
          }
 
          function check_email() {
-            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             var email = $("#form_email").val();
             if (pattern.test(email) && email !== '') {
                $("#email_error_message").hide();
