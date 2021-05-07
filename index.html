@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type="text/css" href="style.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" href="style.css" rel="stylesheet">
 </head>
 <body data-spy="scroll" data-target="#navbarResponsive">
 <div id="home" class="">
@@ -183,7 +184,11 @@
     </div>
     <div class="form-group">
       <label for="sname">Last Name</label>
+<<<<<<< HEAD
+      <input type="text" class="form-control" " id="form_sname" name="sname" required>
+=======
       <input type="text" class="form-control"  id="form_sname" name="sname" required>
+>>>>>>> 843306fa83ab177d6c047c18d2043667e75d269e
       <span class="error_form" id="sname_error_message"></span>
     </div>
     <div class="form-group">  
@@ -276,7 +281,7 @@ $(function(){
          function check_fname() {
             var pattern = /^[a-zA-Z\s]*$/;
             var fname = $("#form_fname").val();
-            if (pattern.test(fname)) {
+            if (pattern.test(fname) && fname !== '') {
                $("#fname_error_message").hide();
                $("#form_fname").css("border-bottom","2px solid #34F458");
             } else {
@@ -297,7 +302,7 @@ $(function(){
                $("#sname_error_message").html("Should contain only Characters");
                $("#sname_error_message").show();
                $("#form_sname").css("border-bottom","2px solid #F90A0A");
-               error_fname = true;
+               error_sname = true;
             }
          }
 
