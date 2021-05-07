@@ -290,7 +290,7 @@ $(function(){
          function check_sname() {
             var pattern = /^[a-z][a-z\s]*$/;
             var sname = $("#form_sname").val()
-            if (pattern.test(sname) && sname !== '') {
+            if (pattern.test(sname)) {
                $("#sname_error_message").hide();
                $("#form_sname").css("border-bottom","2px solid #34F458");
             } else {
