@@ -187,6 +187,11 @@
       <input type="email" class="form-control" id="form_email" name="emailAddress" required>
       <span class="error_form" id="email_error_message"></span>
     </div>
+    <div class="form-group">  
+      <label for="phno">Phone Number:</label>
+      <input type="text" class="form-control" id="form_phno" name="phno" required>
+      <span class="error_form" id="phno_error_message"></span>
+    </div>
     <div class="form-group">
       <label for="name">Message</label>
       <textarea name="Message" class="form-control" id="form-message"></textarea required>
@@ -236,8 +241,8 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://mdbootstrap.com/"> Anoop.peterkv@gmail.com</a>
   </div>
   <!-- Copyright -->
 
@@ -254,10 +259,12 @@ $(function(){
          $("#fname_error_message").hide();
          $("#sname_error_message").hide();
          $("#email_error_message").hide();
+         $("#phno_error_message").hide();
 
          var error_fname = false;
          var error_sname = false;
          var error_email = false;
+         var error_phno = false;
 
          $("#form_fname").focusout(function(){
            check_fname();
@@ -267,6 +274,9 @@ $(function(){
          });
          $("#form_email").focusout(function() {
             check_email();
+         });
+         $("#form_phno").focusout(function() {
+            check_phno();
          });
 
          function check_fname() {
@@ -310,46 +320,57 @@ $(function(){
                error_email = true;
             }
          }
+         
+           function check_phno() {
+                var pattern = /[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}/;
+                var phno = $("#form_phno").val()
+                if (pattern.test(phno) && phno !== '') {
+                $("#phno_error_message").hide();
+                $("#form_phno").css("border-bottom","2px solid #34F458");
+                } else {
+                $("#phno_error_message").html("Phone Number (Format: +99(99)9999-9999");
+                $("#phno_error_message").show();
+                $("#form_phno").css("border-bottom","2px solid #F90A0A");
+                error_phno = true;
+            }
+        }
 
          $("#submit-form").submit(function(){
             error_fname = false;
             error_sname = false;
             error_email = false;
+            error_phno = false;
 
             check_fname();
             check_sname();
             check_email();
+            check_phno();
 
-            if (error_fname === false && error_sname === false && error_email === false) {
-               alert("Registration Successfull");
-               return true;
-            } else {
-               alert("Please Fill the form Correctly");
-               return false;
-            }
-         });
-});
+            if (error_fname === false && error_sname === false && error_email === false && error_phno === false) {
+                         
+                        $.ajax({
+                        url:" https://script.google.com/macros/s/AKfycbwIUq-83XqtKt0Bt67o1IaQs1hjLhfNc_RYoDvj/exec",
+                        data:$("#submit-form").serialize(),
+                        type:"post",
+                        success:function (response){
+                            alert("Form submitted successfully")
+                            window.location.reload()
+                            //window.location.href="https://google.com"
+                        },
+                        error:function (err){
+                            alert("Something Error")
+                
+                        },  
+                    })
+                    alert("Registration Successfull");
+                    return true;
+                    } else {
+                     alert("Please Fill the form Correctly");
+                     return false;
+                }
+            });
+        });
 
-  
-</script>
-<script>
-  $("#submit-form").submit((e)=>{
-      e.preventDefault()
-      $.ajax({
-          url:" https://script.google.com/macros/s/AKfycbwIUq-83XqtKt0Bt67o1IaQs1hjLhfNc_RYoDvj/exec",
-          data:$("#submit-form").serialize(),
-          method:"post",
-          success:function (response){
-              alert("Form submitted successfully")
-              window.location.reload()
-              //window.location.href="https://google.com"
-          },
-          error:function (err){
-              alert("Something Error")
-
-          },
-      })
-  })
 </script>
 
 </body>
