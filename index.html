@@ -253,7 +253,6 @@ $(function(){
          $("#sname_error_message").hide();
          $("#email_error_message").hide();
          $("#phno_error_message").hide();
-         $("#whitespace_error_message").hide();
 
          var error_fname = false;
          var error_sname = false;
@@ -304,25 +303,25 @@ $(function(){
             }
          }
 
-         function white_space() {
+        function white_space() {
            var userFname = document.getElementById('form_fname').value;
-           var userSname = document.getElementById('form_sname').value;
+           var userSname = $("#form_sname").val()
            
            if(userFname.replace(/\s/g, "").length <= 0){
-             $("#whitespace_error_message").html("First Name can't be empty");
-             $("#whitespace_error_message").show();
+             $("#fname_error_message").html("First Name can't be empty");
+             $("#fname_error_message").show();
              whitespace_error = true;
            }else{
-            $("#whitespace_error_message").hide();
+            $("#fname_error_message").hide();
             $("#form_sname").css("border-bottom","2px solid #34F458");
            }
            
            if(userSname.replace(/\s/g, "").length <= 0){
-             $("#whitespace_error_message").html("Last Name can't be empty");
-             $("#whitespace_error_message").show();
+             $("#sname_error_message").html("Last Name can't be empty");
+             $("#sname_error_message").show();
              whitespace_error = true;
            }else{
-            $("#whitespace_error_message").hide();
+            $("#sname_error_message").hide();
             $("#form_sname").css("border-bottom","2px solid #34F458");
            }
          }
