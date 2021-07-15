@@ -262,7 +262,7 @@ $(function(){
            var userFname = document.getElementById('form_fname').value;
            
            if(userFname.replace(/\s/g, "").length <= 0){
-             $("#whitespace_error_message_one").html("First Name can't be empty");
+             $("#whitespace_error_message_one").html("Please Enter Your Firstname");
              $("#whitespace_error_message_one").show();
              $("#form_fname").css("border-bottom","2px solid #F90A0A");
              whitespace_error = true;
@@ -276,7 +276,7 @@ $(function(){
            var userSname = $("#form_sname").val()
 
            if(userSname.replace(/\s/g, "").length <= 0){
-             $("#whitespace_error_message_two").html("Last Name can't be empty");
+             $("#whitespace_error_message_two").html("Please Enter Your Lastname");
              $("#whitespace_error_message_two").show();
              $("#form_sname").css("border-bottom","2px solid #F90A0A");
              whitespace_error = true;
@@ -348,10 +348,10 @@ $(function(){
                 
                         },  
                     })
-                    alert("Registration Successfull");
+                    alert("Submitted Successfully. We Will Contact you soon..!");
                     return true;
                     } else {
-                     alert("Please Fill the form Correctly");
+                     alert("oops..! Please Fill the form Correctly");
                      return false;
                 }
             });
