@@ -211,6 +211,7 @@ $(function(){
          $("#sname_error_message").hide();
          $("#email_error_message").hide();
          $("#phno_error_message").hide();
+         $("#whitespace_error_message").hide();
 
          var error_fname = false;
          var error_sname = false;
@@ -240,7 +241,7 @@ $(function(){
                $("#fname_error_message").hide();
                $("#form_fname").css("border-bottom","2px solid #34F458");
             }else{
-               $("#fname_error_message").html("Should contain only Characters and can't be empty");
+               $("#fname_error_message").html("Should contain only Characters");
                $("#fname_error_message").show();
                $("#form_fname").css("border-bottom","2px solid #F90A0A");
                error_fname = true;
@@ -254,7 +255,7 @@ $(function(){
                $("#sname_error_message").hide();
                $("#form_sname").css("border-bottom","2px solid #34F458");
             } else {
-               $("#sname_error_message").html("Should contain only Characters and can't be empty");
+               $("#sname_error_message").html("Should contain only Characters");
                $("#sname_error_message").show();
                $("#form_sname").css("border-bottom","2px solid #F90A0A");
                error_sname = true;
@@ -266,20 +267,20 @@ $(function(){
            var userSname = $("#form_sname").val()
            
            if(userFname.replace(/\s/g, "").length <= 0){
-             $("#fname_error_message").html("First Name can't be empty");
-             $("#fname_error_message").show();
+             $("#whitespace_error_message_one").html("First Name can't be empty");
+             $("#whitespace_error_message_one").show();
              whitespace_error = true;
            }else{
-            $("#fname_error_message").hide();
+            $("#whitespace_error_message_one").hide();
             $("#form_sname").css("border-bottom","2px solid #34F458");
            }
            
            if(userSname.replace(/\s/g, "").length <= 0){
-             $("#sname_error_message").html("Last Name can't be empty");
-             $("#sname_error_message").show();
+             $("#whitespace_error_message_two").html("Last Name can't be empty");
+             $("#whitespace_error_message_two").show();
              whitespace_error = true;
            }else{
-            $("#sname_error_message").hide();
+            $("#whitespace_error_message_two").hide();
             $("#form_sname").css("border-bottom","2px solid #34F458");
            }
          }
