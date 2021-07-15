@@ -207,12 +207,6 @@
 <script type="text/javascript">
 $(function(){
 
-         $("#fname_error_message").hide();
-         $("#sname_error_message").hide();
-         $("#email_error_message").hide();
-         $("#phno_error_message").hide();
-         $("#whitespace_error_message").hide();
-
          var error_fname = false;
          var error_sname = false;
          var error_email = false;
@@ -221,11 +215,11 @@ $(function(){
 
          $("#form_fname").focusout(function(){
            check_fname();
-           white_space();
+           white_space_one();
          });
          $("#form_sname").focusout(function() {
             check_sname();
-            white_space();
+            white_space_two();
          });
          $("#form_email").focusout(function() {
             check_email();
@@ -262,9 +256,8 @@ $(function(){
             }
          }
 
-          function white_space() {
+         function white_space_one() {
            var userFname = document.getElementById('form_fname').value;
-           var userSname = $("#form_sname").val()
            
            if(userFname.replace(/\s/g, "").length <= 0){
              $("#whitespace_error_message_one").html("First Name can't be empty");
@@ -273,9 +266,13 @@ $(function(){
              whitespace_error = true;
            }else{
             $("#whitespace_error_message_one").hide();
-            $("#form_sname").css("border-bottom","2px solid #34F458");
+            // $("#form_fname").css("border-bottom","2px solid #34F458");
            }
-           
+         }
+
+         function white_space_two() {
+           var userSname = $("#form_sname").val()
+
            if(userSname.replace(/\s/g, "").length <= 0){
              $("#whitespace_error_message_two").html("Last Name can't be empty");
              $("#whitespace_error_message_two").show();
@@ -283,7 +280,7 @@ $(function(){
              whitespace_error = true;
            }else{
             $("#whitespace_error_message_two").hide();
-            $("#form_sname").css("border-bottom","2px solid #34F458");
+            // $("#form_sname").css("border-bottom","2px solid #34F458");
            }
          }
 
@@ -322,9 +319,12 @@ $(function(){
             error_phno = false;
             whitespace_error = false;
 
-            white_space();
+            
+            
             check_fname();
+            white_space_one();
             check_sname();
+            white_space_two();
             check_email();
             check_phno();
             
