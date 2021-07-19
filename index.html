@@ -182,7 +182,7 @@
     </div>
     <div class="form-group">  
       <label for="phno">Phone Number:</label>
-      <input type="text" class="form-control" id="form_phno" name="phno" required>
+      <input type="number" class="form-control" id="form_phno" name="phno" required>
       <span class="error_form" id="phno_error_message"></span>
     </div>
     <div class="form-group">
@@ -301,13 +301,13 @@ $(function(){
          }
          
            function check_phno() {
-                var pattern = /[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}/;
+                var pattern = /^[6-9][0-9]{9}$/;
                 var phno = $("#form_phno").val()
                 if (pattern.test(phno) && phno !== '') {
                 $("#phno_error_message").hide();
                 $("#form_phno").css("border-bottom","2px solid #34F458");
                 } else {
-                $("#phno_error_message").html("Phone Number (Format: +99(99)9999-9999");
+                $("#phno_error_message").html("Enter 10 digit valid mobile number");
                 $("#phno_error_message").show();
                 $("#form_phno").css("border-bottom","2px solid #F90A0A");
                 error_phno = true;
