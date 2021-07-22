@@ -233,7 +233,7 @@ $(function(){
          $("#form_email").focusout(function() {
             check_email();
          });
-         $("#form_phno").focusout(function() {
+         $("#form_phno").keydown(function() {
             check_phno();
          });
 
@@ -314,7 +314,7 @@ $(function(){
                 $("#phno_error_message").hide();
                 $("#form_phno").css("border-bottom","2px solid #34F458");
                 } else {
-                $("#phno_error_message").html("Enter 10 digit valid mobile number");
+                $("#phno_error_message").html("Enter valid 10 digit mobile number");
                 $("#phno_error_message").show();
                 $("#form_phno").css("border-bottom","2px solid #F90A0A");
                 error_phno = true;
